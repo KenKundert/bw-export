@@ -116,9 +116,10 @@ a new “Avendesora” folder.
 
 After first run, a settings file is created in 
 ~/.config/bw-json-export/settings.nt.  You can use it to control the name of the 
-“Avendesora” folder.  The default value is “[Avendesora-]YYMMDD”.  The 
-characters within the brackets is output verbatim and the remaining characters 
-are interpreted as an Arrow format (see 
+“Avendesora” folder.  The default value is “[Avendesora-]YYMMDD”.  You can 
+eliminate the date using “[Avendesora]” or you can delete the folder completely. 
+The characters within the brackets is output verbatim and the remaining 
+characters are interpreted as an Arrow format (see 
 https://arrow.readthedocs.io/en/latest/index.html#supported-tokens).
 
 After importing your bw.json file you must delete it as it contains your secrets 
@@ -322,14 +323,14 @@ try:
 
     try:
         config = nt.load(settings_path)
-        identifier = config['id']
+        identifier = config['uuid']
         base_uuid = uuid.UUID(identifier)
         folder_name = config.get('folder')
     except FileNotFoundError:
         # config file does not exist, create it
         base_uuid = uuid.uuid4()
         config = dict(
-            id = str(base_uuid),
+            uuid = str(base_uuid),
             folder = folder_name,
         )
         config_dir.mkdir(parents=True, exist_ok=True)
@@ -348,11 +349,10 @@ try:
                 )
             ],
         ))
-    items = vault['items']
 
     # Scan accounts and gather accounts to export {{{2
     pw = PasswordGenerator()
-    accounts = []
+    accounts = vault['items']
     # visit each account
     for account in pw.all_accounts():
         account_name = account.get_name()
@@ -413,17 +413,7 @@ try:
                     e.reraise(culprit=(class_name, key, e.culprit))
             accounts.append(output)
     with open(output_filename, 'w') as f:
-        data = dict(
-            encrypted = False,
-            folders = [
-                dict(
-                    name = folder_name,
-                    id = str(folder_uuid),
-                )
-            ],
-            items = accounts,
-        )
-        json.dump(data, f, indent=2)
+        json.dump(vault, f, indent=2)
     os.chmod(output_filename, 0o600)
 
 # Process exceptions {{{1

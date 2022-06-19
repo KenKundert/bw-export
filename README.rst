@@ -162,9 +162,10 @@ a new “Avendesora” folder.
 
 After first run, a settings file is created in 
 *~/.config/bw-json-export/settings.nt*.  You can use it to control the name of 
-the “Avendesora” folder.  The default value is “[Avendesora-]YYMMDD”.  The 
-characters within the brackets is output verbatim and the remaining characters 
-are interpreted as an `Arrow format`_.
+the “Avendesora” folder.  The default value is “[Avendesora-]YYMMDD”.  You can 
+eliminate the date using “[Avendesora]” or you can delete the folder completely.  
+The characters within the brackets is output verbatim and the remaining 
+characters are interpreted as an `Arrow format`_.
 
 After importing your *bw.json* file you must delete it as it contains your 
 secrets in plain text.

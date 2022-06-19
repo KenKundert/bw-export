@@ -2,6 +2,8 @@ examples/access.nt
 
 # version info
 .bump.cfg.nt
+bw.json
+bw.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
