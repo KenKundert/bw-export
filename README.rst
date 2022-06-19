@@ -15,7 +15,7 @@
 | Version: 0.0.0
 | Released: 2022-06-19
 | Documentation: NurdleTech_.
-| Please post all questions, suggestions, and bug reports to: Github_.
+| Please post all questions, suggestions, and bug reports to: `Github issues`_.
 |
 
 This utility allows you to export select accounts from Avendesora_ in a form 
@@ -49,7 +49,7 @@ Github_.
 bw-json-export
 --------------
 
-Generates a JSON file (bw.json) suitable for uploading to a *BitWarden Vault*.
+Generates a JSON file (*bw.json*) suitable for uploading to a *BitWarden Vault*.
 
 Usage:
     bw-json-export
@@ -173,7 +173,7 @@ secrets in plain text.
 bw-csv-export
 -------------
 
-Generates a CSV file (bw.csv) suitable for uploading to a *BitWarden Vault*.
+Generates a CSV file (*bw.csv*) suitable for uploading to a *BitWarden Vault*.
 
 Usage::
 
@@ -224,14 +224,15 @@ imported accounts into “No Folder”.  You should then delete any existing
 accounts in the “Avendesora” folder and move all the new accounts in “No Folder” 
 to the “Avendesora” folder.
 
-You must then delete the bw.csv file as it can include your secrets in plain 
+You must then delete the *bw.csv* file as it can include your secrets in plain 
 text.
 
 .. _NurdleTech: http://nurdletech.com/linux-utilities/bw-export
-.. _Github: https://github.com/KenKundert/bw-export/issues
+.. _Github: https://github.com/KenKundert/bw-export
+.. _Github issues: https://github.com/KenKundert/bw-export/issues
 .. _Avendesora: https://avendesora.readthedocs.io
 .. _BitWarden: https://bitwarden.com
 .. _BitWarden Web Portal: https://vault.bitwarden.com
 .. _BitWarden server: https://bitwarden.com/help/install-on-premise-linux
-.. _NestedText: https://nestedtext.org>
+.. _NestedText: https://nestedtext.org
 .. _Arrow format: https://arrow.readthedocs.io/en/latest/index.html#supported-tokens
