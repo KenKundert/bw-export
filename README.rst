@@ -13,26 +13,24 @@
 
 | Authors: Ken Kundert
 | Version: 0.0.0
-| Released: 2022-06-15
-| Documentation: `http://nurdletech.com/linux-utilities/bw-export`_.
-| Please post all questions, suggestions, and bug reports to: `Github <https://github.com/KenKundert/bw-export/issues>`_.
+| Released: 2022-06-19
+| Documentation: NurdleTech_.
+| Please post all questions, suggestions, and bug reports to: Github_.
 |
 
-This utility allows you to export select accounts from `Avendesora 
-<https://avendesora.readthedocs.io`_ in a form that can easily be imported into 
-`BitWarden <https://bitwarden.com>`_.  *Avendesora* is a very flexible and 
-secure password manager for the Linux command line and *BitWarden* in an open 
-source commercial password manager supported on a wide variety of platforms, 
-such as *Windows*, *Mac*, *IOS*, and *Android*.
+This utility allows you to export select accounts from Avendesora_ in a form 
+that can easily be imported into BitWarden_.  *Avendesora* is a very flexible 
+and secure password manager for the Linux command line and *BitWarden* in an 
+open source commercial password manager supported on a wide variety of 
+platforms, such as *Windows*, *Mac*, *IOS*, and *Android*.
 
 This package provides two programs.  *bw-csv-export* is the simpler of the two, 
 it is less capable.  *bw-json-export* supports more *BitWarden’s* features and 
 generally preferred.  Both allow you to export select accounts from *Avendesora* 
-into an interchange file that can be uploaded to the `BitWarden Web Portal 
-<https://vault.bitwarden.com>`_, and from there the information syncs with all 
-of your *BitWarden*-linked devices.  If you are not comfortable sharing your 
-account information with *BitWarden*, you can install and run your own 
-`BitWarden server <https://bitwarden.com/help/install-on-premise-linux>`_.
+into an interchange file that can be uploaded to the `BitWarden Web Portal`_, 
+and from there the information syncs with all of your *BitWarden*-linked 
+devices.  If you are not comfortable sharing your account information with 
+*BitWarden*, you can install and run your own `BitWarden server`_.
 
 
 Installation
@@ -45,7 +43,7 @@ Install with::
 It will install both *bw-csv-export* and *bw-json-export* to ~/.local/bin.
 
 You can find the latest version of the source code on
-`Github <https://github.com/KenKundert/bw-export>`_.
+Github_.
 
 
 bw-json-export
@@ -71,8 +69,8 @@ A typical example is::
         password = "{passcode}",
     )
 
-You can add arbitrary fields using *fields* as represented by a `NestedText 
-<https://nestedtext.org>`_ dictionary::
+You can add arbitrary fields using *fields* as represented by a NestedText_ 
+dictionary::
 
     bitwarden = dict(
         type = "login",
@@ -166,8 +164,7 @@ After first run, a settings file is created in
 *~/.config/bw-json-export/settings.nt*.  You can use it to control the name of 
 the “Avendesora” folder.  The default value is “[Avendesora-]YYMMDD”.  The 
 characters within the brackets is output verbatim and the remaining characters 
-are interpreted as an `Arrow format 
-<https://arrow.readthedocs.io/en/latest/index.html#supported-tokens>`_.
+are interpreted as an `Arrow format`_.
 
 After importing your *bw.json* file you must delete it as it contains your 
 secrets in plain text.
@@ -229,3 +226,12 @@ to the “Avendesora” folder.
 
 You must then delete the bw.csv file as it can include your secrets in plain 
 text.
+
+.. _NurdleTech: http://nurdletech.com/linux-utilities/bw-export
+.. _Github: https://github.com/KenKundert/bw-export/issues
+.. _Avendesora: https://avendesora.readthedocs.io
+.. _BitWarden: https://bitwarden.com
+.. _BitWarden Web Portal: https://vault.bitwarden.com
+.. _BitWarden server: https://bitwarden.com/help/install-on-premise-linux
+.. _NestedText: https://nestedtext.org>
+.. _Arrow format: https://arrow.readthedocs.io/en/latest/index.html#supported-tokens

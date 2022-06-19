@@ -125,7 +125,7 @@ After importing your bw.json file you must delete it as it contains your secrets
 in plain text.
 """
 __version__ = '0.0.0'
-__released__ = '2021-11-10'
+__released__ = '2022-06-19'
 
 
 # Imports {{{1
