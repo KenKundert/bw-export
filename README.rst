@@ -228,6 +228,18 @@ to the “Avendesora” folder.
 You must then delete the *bw.csv* file as it can include your secrets in plain 
 text.
 
+
+Releases
+--------
+**Latest Development Version**:
+    | Version: 0.0.0
+    | Released: 2022-06-19
+
+
+0.0 (2022-05-19)
+    - initial release
+
+
 .. _NurdleTech: http://nurdletech.com/linux-utilities/bw-export
 .. _Github: https://github.com/KenKundert/bw-export
 .. _Github issues: https://github.com/KenKundert/bw-export/issues
