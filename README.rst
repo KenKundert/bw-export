@@ -100,50 +100,51 @@ You can also use a *Python* dictionary::
         ),
     )
 
-There are four types of entries supported, and they accept the following fields:
+There are four types of entries supported, and they accept the following 
+fields::
 
-|   1: login
-|       name
-|       username
-|       password
-|       totp
-|       urls
-|       fields
-|       notes
+    1: login
+        name
+        username
+        password
+        totp
+        urls
+        fields
+        notes
 
-|   2: secureNote
-|       name
-|       notes
-|       fields
+    2: secureNote
+        name
+        notes
+        fields
 
-|   3: card
-|       name
-|       brand
-|       holder
-|       ccn
-|       exp
-|       cvv
-|       fields
-|       notes
+    3: card
+        name
+        brand
+        holder
+        ccn
+        exp
+        cvv
+        fields
+        notes
 
-|   4: identity
-|       name
-|       title
-|       names
-|       street
-|       city
-|       state
-|       zip
-|       country
-|       email
-|       phone
-|       company
-|       ssn
-|       username
-|       passport
-|       license
-|       fields
-|       notes
+    4: identity
+        name
+        title
+        names
+        street
+        city
+        state
+        zip
+        country
+        email
+        phone
+        company
+        ssn
+        username
+        passport
+        license
+        fields
+        notes
 
 Running *bw-json-export* creates the file: *bw.json*.
 
