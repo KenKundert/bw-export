@@ -98,6 +98,7 @@ You can also use a *Python* dictionary::
         ),
     )
 
+Documentation on the fields can be found in the `BitWarden API Documentation`_.
 There are four types of entries supported, and they accept the following 
 fields::
 
@@ -151,14 +152,13 @@ Once created, it can be imported from the *BitWarden* website
 format.
 
 By policy, *BitWarden* create duplicates of any imported accounts if they were 
-previously imported.  As such, you should delete existing accounts before 
-re-importing to avoid duplicate accounts.  A convenient way of doing so would be 
-to partition your BitWarden cards into two folders, one dedicated to accounts 
-imported from Avendesora and one dedicated you your BitWarden native cards.  
-Before importing, first delete all the entries in the “Avendesora” folder, and 
-then delete the folder itself  by clicking on it, a pencil icon will appear, 
-click on that, and then click on the trash can icon.  Importing will then create 
-a new “Avendesora” folder.
+previously imported.  As such, you should will need to delete the existing 
+accounts.  A convenient way of doing so would be to partition your BitWarden 
+cards into two folders, one dedicated to accounts imported from Avendesora and 
+one dedicated you your BitWarden native cards.  Before importing, first delete 
+all the entries in the “Avendesora” folder, and then delete the folder itself  
+by clicking on it, a pencil icon will appear, click on that, and then click on 
+the trash can icon.  Importing will then create a new “Avendesora” folder.
 
 After first run, a settings file is created in 
 *~/.config/bw-json-export/settings.nt*.  You can use it to control the name of 
@@ -170,6 +170,22 @@ characters are interpreted as an `Arrow format`_.
 After importing your *bw.json* file you must delete it as it contains your 
 secrets in plain text.
 
+You can use Bitwarden to autofill fields on Android.  To do so you must first 
+enable configure Android to use Bitwarden for *AutoFill* 
+(Settings→Passwords→Autofill).  Then when you select a field that matches an 
+account you have configured in Bitwarden, you will see button that allows you to 
+autofill the value.  The first time you push it you will likely get an error 
+message saying the entry cannot be found.  It will give you the name it is 
+expecting.  For example, for the NordVPN app it needs ‘com.nordvpn.android’.  
+You need to add this to your list of urls.  For example::
+
+    bitwarden = dict(
+        type = 'login',
+        name = 'NordVPN',
+        login_uri = '{urls} androidapp://com.nordvpn.android',
+        login_username = '{email}',
+        login_password = '{passcode}',
+    )
 
 bw-csv-export
 -------------
@@ -247,5 +263,6 @@ Releases
 .. _BitWarden: https://bitwarden.com
 .. _BitWarden Web Portal: https://vault.bitwarden.com
 .. _BitWarden server: https://bitwarden.com/help/install-on-premise-linux
+.. _BitWarden API Documentation: https://bitwarden.com/help/public-api/
 .. _NestedText: https://nestedtext.org
 .. _Arrow format: https://arrow.readthedocs.io/en/latest/index.html#supported-tokens
