@@ -64,8 +64,8 @@ A typical example is::
     bitwarden = dict(
         type = "login",
         name = "The Economist",
-        urls = "{urls}",
-        username = "{email}",
+        urls = urls,
+        username = email,
         password = "{passcode}",
     )
 
@@ -90,11 +90,11 @@ You can also use a *Python* dictionary::
         type = "login",
         name = "Visa",
         fields = dict(
-            holder = "{name}",
-            ccn = "{ccn}",
-            exp = "{exp}",
-            cvv = "{cvv}",
-            report = "{support}",
+            holder = name,
+            ccn = ccn,
+            exp = exp,
+            cvv = cvv,
+            report = support,
         ),
     )
 
@@ -182,9 +182,9 @@ You need to add this to your list of urls.  For example::
     bitwarden = dict(
         type = 'login',
         name = 'NordVPN',
-        login_uri = '{urls} androidapp://com.nordvpn.android',
-        login_username = '{email}',
-        login_password = '{passcode}',
+        login_uri = [urls, 'androidapp://com.nordvpn.android'],
+        login_username = email,
+        login_password = "{passcode}",
     )
 
 bw-csv-export
@@ -206,8 +206,8 @@ A typical example is::
     bitwarden = dict(
         type = "login",
         name = "The Economist",
-        login_uri = "{urls}",
-        login_username = "{email}",
+        login_uri = urls,
+        login_username = email,
         login_password = "{passcode}",
     )
 
