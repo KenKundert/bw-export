@@ -38,7 +38,7 @@ Installation
 
 Install with::
 
-    pip install --user bw-export
+    pip install bw-export
 
 It will install both *bw-csv-export* and *bw-json-export* to ~/.local/bin.
 

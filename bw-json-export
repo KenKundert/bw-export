@@ -133,7 +133,7 @@ __released__ = '2022-06-19'
 from avendesora import PasswordGenerator, PasswordError, Script
 from appdirs import user_config_dir
 from inform import (
-    Error, conjoin, fatal, is_collection, is_mapping, is_str, os_error,
+    Error, fatal, is_collection, is_mapping, is_str, os_error,
     terminate
 )
 from docopt import docopt
@@ -161,12 +161,14 @@ def extract_fields(value):
         fields = nt.loads(value)
     return 'fields', [dict(name=k, value=v) for k, v in fields.items()]
 
+
 def extract_uris(urls):
     if is_str(urls):
         urls = urls.split()
     elif is_mapping(urls):
         urls = urls.values()
     return 'uris', [dict(uri=u, match=2) for u in urls]
+
 
 def extract_expiration(value):
     month, _, year = value.partition('/')
